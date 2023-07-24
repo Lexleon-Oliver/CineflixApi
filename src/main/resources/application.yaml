@@ -1,0 +1,33 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${DATABASE_SERVER_NAME}:5432/cinemanager-db
+    username: ${DATABASE_USER_NAME}
+    password: ${DATABASE_USER_PASSWORD}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      # dont do this in production!!
+      ddl-auto: update
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+info:
+  app:
+    name: cineflix
+    description: Catalogo digital para gerenciamento de filmes e s�ries presentes no meu acervo pessoal
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    health:
+      probes:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: info,health,prometheus,metrics
+server:
+  port: 8080
+  shutdown: graceful
+  servlet:
+    context-path: /api
