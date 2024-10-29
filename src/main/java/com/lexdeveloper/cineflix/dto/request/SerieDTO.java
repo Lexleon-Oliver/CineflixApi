@@ -1,6 +1,5 @@
 package com.lexdeveloper.cineflix.dto.request;
 
-import com.lexdeveloper.cineflix.entity.Season;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,6 +15,7 @@ import java.util.List;
 @Builder
 public class SerieDTO {
     private Long id;
+    private Long tmdb;
 
     @NotEmpty(message = "O campo name não pode ficar vazio!")
     @Size(max = 255, message = "O campo name deve ter até 255 caracteres")

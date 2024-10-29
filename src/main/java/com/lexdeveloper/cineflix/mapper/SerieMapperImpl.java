@@ -19,6 +19,7 @@ public class SerieMapperImpl implements SerieMapper{
         }
         Serie serie= new Serie();
         serie.setId(serieDTO.getId());
+        serie.setTmdb(serieDTO.getTmdb());
         serie.setName(serieDTO.getName());
         serie.setNameBr(serieDTO.getNameBr());
         serie.setYear(serieDTO.getYear());
@@ -41,6 +42,7 @@ public class SerieMapperImpl implements SerieMapper{
         }
         SerieDTO serieDTO = new SerieDTO();
         serieDTO.setId(serie.getId());
+        serieDTO.setTmdb(serie.getTmdb());
         serieDTO.setName(serie.getName());
         serieDTO.setNameBr(serie.getNameBr());
         serieDTO.setYear(serie.getYear());
