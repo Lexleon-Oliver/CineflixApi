@@ -16,6 +16,9 @@ public class Serie {
     private Long id;
 
     @Column(nullable = false)
+    private Long tmdb;
+
+    @Column(nullable = false)
     private String name;
 
     @Column(nullable = false)
