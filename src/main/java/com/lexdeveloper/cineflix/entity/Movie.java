@@ -17,7 +17,7 @@ public class Movie {
     private Long id;
 
     @Column(nullable = false)
-    private Long tmdb;
+    private String tmdb;
 
     @Column(nullable = false)
     private String name;

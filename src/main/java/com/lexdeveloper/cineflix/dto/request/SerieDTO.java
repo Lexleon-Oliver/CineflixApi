@@ -15,7 +15,7 @@ import java.util.List;
 @Builder
 public class SerieDTO {
     private Long id;
-    private Long tmdb;
+    private String tmdb;
 
     @NotEmpty(message = "O campo name não pode ficar vazio!")
     @Size(max = 255, message = "O campo name deve ter até 255 caracteres")
