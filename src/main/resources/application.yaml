@@ -29,3 +29,5 @@ server:
   shutdown: graceful
   servlet:
     context-path: /api
+video:
+  directory: /mnt/Filmes/Filmes/
