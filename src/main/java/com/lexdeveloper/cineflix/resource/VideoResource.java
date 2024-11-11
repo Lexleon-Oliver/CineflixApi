@@ -37,7 +37,6 @@ public class VideoResource {
         responseHeaders.add("Content-Type", "video/mp4");
 
         if (headers.getRange().isEmpty()) {
-            responseHeaders.add(CONTENT_TYPE, "video/mp4");
             responseHeaders.add(CONTENT_LENGTH, String.valueOf(contentLength));
             return ResponseEntity.ok().headers(responseHeaders).body(outputStream -> {
                 try (InputStream inputStream = Files.newInputStream(path)) {
@@ -57,7 +56,6 @@ public class VideoResource {
                 return ResponseEntity.status(HttpStatus.REQUESTED_RANGE_NOT_SATISFIABLE).build();
             }
 
-            responseHeaders.add(CONTENT_TYPE, "video/mp4");
             responseHeaders.add(CONTENT_RANGE, "bytes " + start + "-" + end + "/" + contentLength);
             responseHeaders.add(CONTENT_LENGTH, String.valueOf(end - start + 1));
 
