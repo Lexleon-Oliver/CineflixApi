@@ -1,6 +1,8 @@
 spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:default}
   datasource:
-    url: jdbc:postgresql://${DATABASE_SERVER_NAME:localhost}:5432/${DATABASE_NAME:cinemanager-db}
+    url: jdbc:postgresql://${DATABASE_SERVER_NAME:db}:5432/${DATABASE_NAME:cinemanager-db}
     username: ${DATABASE_USER_NAME:postgres_user_admin}
     password: ${DATABASE_USER_PASSWORD:postgres_password_admin}
   jpa:
@@ -26,6 +28,8 @@ management:
         include: info,health,prometheus,metrics
 server:
   port: 8080
+  tomcat:
+    async-timeout: 300000
   shutdown: graceful
   servlet:
     context-path: /api
